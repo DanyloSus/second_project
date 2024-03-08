@@ -1,21 +1,39 @@
 import "package:flutter/material.dart";
 
+import "package:second_project/widgets/duck_container.dart";
+
 void main() {
+  // runApp(const MaterialApp(
+  //   home: Text("Sus"),
+  // )); for faster starting the app
+
   runApp(
     const MyApp(),
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(context) {
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: GridView.count(
-          crossAxisCount: 2,
-          children: [],
+        body: Container(
+          decoration:
+              const BoxDecoration(color: Color.fromARGB(255, 90, 193, 97)),
+          child: GridView.count(
+            crossAxisCount: 2,
+            mainAxisSpacing: 30,
+            crossAxisSpacing: 30,
+            padding: const EdgeInsets.all(20),
+            children: const [DuckContainer(), DuckContainer(), DuckContainer()],
+          ),
         ),
       ),
     );
