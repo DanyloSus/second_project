@@ -2,10 +2,13 @@ import "package:flutter/material.dart";
 
 import "package:second_project/widgets/duck_container.dart";
 
+import "package:second_project/data/ducks.dart";
+
 void main() {
   // runApp(const MaterialApp(
   //   home: Text("Sus"),
-  // )); for faster starting the app
+  // ));
+  // for faster starting the app
 
   runApp(
     const MyApp(),
@@ -32,7 +35,15 @@ class _MyAppState extends State<MyApp> {
             mainAxisSpacing: 30,
             crossAxisSpacing: 30,
             padding: const EdgeInsets.all(20),
-            children: const [DuckContainer(), DuckContainer(), DuckContainer()],
+            children: [
+              ...duckArray.map((e) => (DuckContainer(
+                    e.sound!,
+                    name: e.name!,
+                    canFly: e.canFly!,
+                    image: e.image!,
+                    quack: e.quack!,
+                  ))),
+            ],
           ),
         ),
       ),
