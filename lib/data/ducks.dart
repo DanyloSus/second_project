@@ -3,7 +3,7 @@ import '../classes/duck.dart';
 
 BirdFactory birdFactory = BirdFactory();
 
-List<Duck> duckArray = [
+List<Duck>? duckArray = [
   birdFactory.createDuck("Quack", name: "Mallard Duck", image: "mallard"),
   birdFactory.createDuck("Squik",
       name: "Rubber Duck", canFly: false, image: "rubber"),

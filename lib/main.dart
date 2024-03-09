@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
             crossAxisSpacing: 30,
             padding: const EdgeInsets.all(20),
             children: [
-              ...duckArray.map((e) => (DuckContainer(
+              ...?duckArray!.map((e) => (DuckContainer(
                     e.sound!,
                     name: e.name!,
                     canFly: e.canFly!,

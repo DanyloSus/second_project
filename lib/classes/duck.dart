@@ -6,6 +6,11 @@ class Duck with BirdMixer {
     this.name = name;
     this.image = image;
     this.canFly = canFly ?? true;
+
+    assert(sound != null);
+    assert(name != null);
+    assert(image != null);
+    assert(canFly != null);
   }
 
   String? get quack => sound;
