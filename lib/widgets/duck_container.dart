@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 class DuckContainer extends StatefulWidget {
   const DuckContainer(this.sound,
       {required this.name,
-      this.image = "question",
+      this.image = "question", // default value
       required this.canFly,
       required this.quack,
       super.key});
 
+  // get all values
   final String sound;
   final String quack;
   final String name;
@@ -23,11 +24,12 @@ class _DuckContainerState extends State<DuckContainer> {
   Widget build(BuildContext context) {
     var image = widget.image;
 
+    // snackbar
     final snackBar = SnackBar(
       content: Text(widget.quack),
       action: SnackBarAction(
         label: 'Undo',
-        onPressed: () {},
+        onPressed: () {}, // lambda
       ),
     );
 
@@ -50,7 +52,8 @@ class _DuckContainerState extends State<DuckContainer> {
             ),
           ),
           TextButton(
-              onPressed: () =>
+              onPressed: () => // lambda
+                  // call snackbar
                   ScaffoldMessenger.of(context).showSnackBar(snackBar),
               child: Text(
                 widget.sound,

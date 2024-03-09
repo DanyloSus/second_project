@@ -10,7 +10,7 @@ mixin BirdMixer {
   set name(String? newName) => _name = newName;
   String? get name => _name;
 
-  set image(String? newImage) => _image = newImage ?? "question";
+  set image(String? newImage) => _image = newImage ?? "question"; // sugar
   String? get image => _image;
 
   set canFly(bool? newState) => _canFly = newState;

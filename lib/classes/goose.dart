@@ -2,16 +2,19 @@ import 'package:second_project/classes/bird_mixer.dart';
 
 class Goose with BirdMixer {
   Goose(sound, {required name, image = "question", canFly}) {
+    // default value
+    // initial
     this.sound = sound;
     this.name = name;
     this.image = image;
-    this.canFly = canFly ?? true;
+    this.canFly = canFly ?? true; // sugar
 
+    // asserts
     assert(sound != null);
     assert(name != null);
     assert(image != null);
     assert(canFly != null);
   }
 
-  String? get honk => sound;
+  String? get honk => sound; // closure
 }

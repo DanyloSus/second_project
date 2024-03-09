@@ -1,8 +1,10 @@
 import '../classes/bird_factory.dart';
 import '../classes/duck.dart';
 
+// fabric
 BirdFactory birdFactory = BirdFactory();
 
+// collections
 List<Duck>? duckArray = [
   birdFactory.createDuck("Quack", name: "Mallard Duck", image: "mallard"),
   birdFactory.createDuck("Squik",
