@@ -10,10 +10,10 @@ class Duck with BirdMixer {
     this.canFly = canFly ?? true; // sugar
 
     // asserts
-    assert(sound != null);
-    assert(name != null);
-    assert(image != null);
-    assert(canFly != null);
+    assert(this.sound != null);
+    assert(this.name != null);
+    assert(this.image != null);
+    assert(this.canFly != null);
   }
 
   String? get quack => sound; // closure
