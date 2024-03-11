@@ -1,7 +1,15 @@
 import 'package:second_project/classes/bird_mixer.dart';
 
 class Duck with BirdMixer {
-  Duck(sound, {required name, image = "question", canFly}) {
+  factory Duck(sound, {required name, image = "question", canFly}) {
+    if (name == "duck" || name == "Duck") {
+      throw ArgumentError("Duck has its type ;<");
+    }
+
+    return Duck._internal(sound, name: name, image: image, canFly: canFly);
+  }
+
+  Duck._internal(sound, {required name, image = "question", canFly}) {
     // default value
     // initial
     this.sound = sound;
@@ -16,5 +24,12 @@ class Duck with BirdMixer {
     assert(this.canFly != null);
   }
 
-  String? get quack => sound; // closure
+  Function quack(String message) {
+    return (String byWho) => "$byWho says: $message";
+  }
+
+  Function countOfQuacks() {
+    int i = 0;
+    return () => i + 1;
+  } // closure
 }

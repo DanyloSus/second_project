@@ -32,13 +32,15 @@ class MyApp extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             children: [
               // lambda & sugar
-              ...?duckArray!.map((e) => (DuckContainer(
-                    e.sound!,
-                    name: e.name!,
-                    canFly: e.canFly!,
-                    image: e.image!,
-                    quack: e.quack!,
-                  ))),
+              ...duckArray!.map(
+                (e) => (DuckContainer(
+                  e.allDetails["sound"],
+                  name: e.allDetails["name"]!,
+                  canFly: e.allDetails["canFly"],
+                  image: e.allDetails["image"],
+                  quack: e.quack(e.sound!),
+                )),
+              ),
             ],
           ),
         ),

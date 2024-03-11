@@ -15,4 +15,11 @@ mixin BirdMixer {
 
   set canFly(bool? newState) => _canFly = newState;
   bool? get canFly => _canFly;
+
+  Map<String, dynamic> get allDetails => {
+        "name": name,
+        "sound": sound,
+        "image": image,
+        "canFly": canFly,
+      };
 }

@@ -5,11 +5,23 @@ import '../classes/duck.dart';
 BirdFactory birdFactory = BirdFactory();
 
 // collections
-List<Duck>? duckArray = [
+// List<Duck>? duckArray = [
+//   birdFactory.createDuck("Quack", name: "Mallard Duck", image: "mallard"),
+//   birdFactory.createDuck("Squik",
+//       name: "Rubber Duck", canFly: false, image: "rubber"),
+//   birdFactory.createDuck("nothing...",
+//       name: "Wooden Duck", canFly: false, image: "wooden"),
+//   // birdFactory.createGoose("Honk", name: "Goose")
+//   birdFactory.createDuck("Honk", name: "Who?")
+// ];
+
+Set<Duck>? duckArray = {
   birdFactory.createDuck("Quack", name: "Mallard Duck", image: "mallard"),
   birdFactory.createDuck("Squik",
       name: "Rubber Duck", canFly: false, image: "rubber"),
   birdFactory.createDuck("nothing...",
       name: "Wooden Duck", canFly: false, image: "wooden"),
-  birdFactory.createGoose("Honk", name: "Goose")
-];
+  // birdFactory.createGoose("Honk", name: "Goose")
+  birdFactory.createDuck("Honk", name: "Who?"),
+  birdFactory.createDuck("Honk", name: "Who?"),
+};

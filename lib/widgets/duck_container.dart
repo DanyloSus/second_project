@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
 class DuckContainer extends StatefulWidget {
-  const DuckContainer(this.sound,
-      {required this.name,
-      this.image = "question", // default value
-      required this.canFly,
-      required this.quack,
-      super.key});
+  const DuckContainer(
+    this.sound, {
+    required this.name,
+    this.image = "question", // default value
+    required this.canFly,
+    required this.quack,
+    super.key,
+  });
 
   // get all values
   final String sound;
-  final String quack;
+  final Function quack;
   final String name;
   final String image;
   final bool canFly;
@@ -26,12 +28,16 @@ class _DuckContainerState extends State<DuckContainer> {
 
     // snackbar
     final snackBar = SnackBar(
-      content: Text(widget.quack),
+      content: Text(widget.quack(widget.name)),
       action: SnackBarAction(
-        label: 'Undo',
+        label: 'Back',
         onPressed: () {}, // lambda
       ),
     );
+
+    void onClickFunc() {
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }
 
     return Card(
       color: const Color.fromARGB(255, 159, 104, 74),
@@ -52,9 +58,7 @@ class _DuckContainerState extends State<DuckContainer> {
             ),
           ),
           TextButton(
-              onPressed: () => // lambda
-                  // call snackbar
-                  ScaffoldMessenger.of(context).showSnackBar(snackBar),
+              onPressed: onClickFunc,
               child: Text(
                 widget.sound,
                 style: const TextStyle(
